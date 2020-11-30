@@ -5,8 +5,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build 💪
+  buildAndDeploy:
+    name: Build and Deploy 💪
     runs-on: ubuntu-latest
     steps:
       - name: Setup Node
@@ -26,10 +26,7 @@ jobs:
 
       - name: Build
         run: npm run-script build
-  deploy:
-    name: Deploy 🚀
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Git Status
         run: git status
 
