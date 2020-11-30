@@ -96,6 +96,7 @@ function Home() {
                 src={useBaseUrl('img/team/eric.png')}
               />
               <h3>Eric Ardhiansyah</h3>
+              <p className={styles.teamJob}>Founder • Developer</p>
               <p>
                 <a
                   href="https://github.com/Thor-x86"
@@ -111,6 +112,7 @@ function Home() {
                 src={useBaseUrl('img/team/antariksha.png')}
               />
               <h3>Antariksha Verma</h3>
+              <p className={styles.teamJob}>Developer • Maintainer</p>
               <p>
                 <a
                   href="https://github.com/antriksh123"
@@ -123,6 +125,7 @@ function Home() {
             <div className={styles.teamItem}>
               <img alt="Brayden W" src={useBaseUrl('img/team/brayden.png')} />
               <h3>Brayden W</h3>
+              <p className={styles.teamJob}>Lead Designer • Developer</p>
               <p>
                 <a
                   href="https://github.com/BraydenTW"
