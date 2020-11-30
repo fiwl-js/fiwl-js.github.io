@@ -73,7 +73,6 @@ h2 {
   padding: 4rem 20px;
   width: 100%;
   background: #fff;
-  /* max-width: 900px; */
   margin: auto;
   transition: color 0.3s, background 0.3s;
 }
@@ -133,33 +132,13 @@ html[data-theme='dark'] .aboutLogo {
   background: #1f273d;
 }
 
-html[data-theme='dark'] .heroBanner {
+html[data-theme='dark'] .heroBanner, html[data-theme='dark'] .aboutBanner, html[data-theme='dark'] .aboutMain, html[data-theme='dark'] .quickstart {
   background: #1c1d1f;
   color: white;
-}
-
-html[data-theme='dark'] .aboutBanner {
-  background: #1c1d1f;
-  color: white;
-}
-
-html[data-theme='dark'] .aboutMain {
-  background: #1c1d1f;
-  color: white;
-}
-
-html[data-theme='dark'] .getStarted {
-  background: white;
-  color: black;
 }
 
 html[data-theme='dark'] .getStarted:hover {
   background: #c1c8da;
-}
-
-html[data-theme='dark'] .quickstart {
-  background: #1c1d1f;
-  color: white;
 }
 
 html[data-theme='dark'] .language-sh {
@@ -181,13 +160,13 @@ html[data-theme='dark'] .language-sh {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  max-width: 650px;
+  max-width: 800px;
   margin: auto;
   padding: 2rem 0;
 }
 
 .teamItem {
-  width: 200px;
+  width: 100%;
   line-height: 0.5em;
 }
 
@@ -201,6 +180,11 @@ html[data-theme='dark'] .language-sh {
 
 .teamItem h3 {
   font-weight: 600;
+}
+
+.teamJob{
+  line-height: 1.4em;
+  height: 2.8em;
 }
 
 .teamItem a {
@@ -233,12 +217,16 @@ html[data-theme='dark'] .language-sh {
 @media only screen and (max-width: 600px) {
   .team {
     flex-direction: column;
+    padding-top: 1em;
   }
   .teamItem {
-    margin: 3em 0 0;
+    margin: 1em 0 0;
+    padding: 2em 0 0;
+    border-top: solid 2px #dedede;
+    max-width: 230px;
   }
 
-  .teamItem:first-child {
+  .teamItem:nth-child(1) {
     margin: 0;
   }
 }
