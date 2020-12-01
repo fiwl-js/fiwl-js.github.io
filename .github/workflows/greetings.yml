@@ -2,7 +2,7 @@ name: Greetings
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened]
 
 jobs:
   GreetCommitter:
@@ -13,5 +13,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          content: 'Thanks for taking your time and effort for your contribution, we truly value it. 😀'
+          content: 'Thanks for creating a PR! We truly value your time and effort. 🤟'
           #default content is "Thank you for taking your time and effort for your contribution, we truly value it. :tada:"
