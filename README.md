@@ -1,41 +1,68 @@
-# Website
+# fiwl-js.github.io
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+Thanks for showing interest to contribute to FIWL-JS 💖, you rock!
 
-### Installation
+Follow the directions below to setup your project and contribute to this repository.
 
+## Setup the Project
+
+_This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator._
+
+The following steps will get you up and running to contribute to fiwl-js.github.io:
+
+1. Fork the repo (click the <kbd>Fork</kbd> button at the top right of [this page](https://github.com/fiwl-js/fiwl-js.github.io))
+
+2. Clone your fork locally
+
+```sh
+git clone https://github.com/<YOUR_USERNAME>/fiwl-js.github.io.git
+cd fiwl-js.github.io
 ```
-$ yarn
+
+3. Setup all the dependencies and packages
+
+```sh
+npm install
 ```
 
-### Local Development
+## Build
 
-```
-$ yarn start
-```
-
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```sh
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+## Making a Pull Request?
 
+That's great! Follow the instructions [given earlier in the README](https://github.com/fiwl-js/fiwl-js.github.io#Setup-the-Project) to setup your fork locally on your device.
+
+Ready?
+
+Commit and push your changes:
+
+```bash
+git add .
+git commit -m "this is my message"
+git push
 ```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Once finished, you can create a pull request!
 
-### Continuous Integration
+Is it your first time? Check out [this link](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) to learn how to submit a pull request.
 
-Some common defaults for linting/formatting have been set for you. If you integrate your project with an open source Continuous Integration system (e.g. Travis CI, CircleCI), you may check for issues using the following command.
+## Think you found a bug?
 
-```
-$ yarn ci
-```
+Please [submit an issue](https://github.com/fiwl-js/fiwl-js.github.io/issues/new) and **provide a clear path to reproduction with a code example**.
+
+The clearer you are, the easier it will be for us help!
+
+## Love FIWL?
+
+A donation is very much appreciated and helpful for our growth.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/fiwl_js)
+
+---
+
+Designed by [BraydenTW](https://braydentw.github.io), built with Docusaurus.
