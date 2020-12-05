@@ -69,6 +69,13 @@ module.exports = {
       },
     ],
   ],
+  scripts: [
+    {
+      src: 'https://cdn.panelbear.com/analytics.js?site=IsD6EBUV3pJ',
+      async: true,
+    },
+    './panelbear.js',
+  ],
   stylesheets: [
     'https://fonts.gstatic.com',
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap',
