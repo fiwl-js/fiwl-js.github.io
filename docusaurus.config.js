@@ -74,7 +74,7 @@ module.exports = {
       src: 'https://cdn.panelbear.com/analytics.js?site=IsD6EBUV3pJ',
       async: true,
     },
-    '/static/panelbear.config.js',
+    'https://raw.githubusercontent.com/fiwl-js/fiwl-js.github.io/main/static/panelbear.config.js',
   ],
   stylesheets: [
     'https://fonts.gstatic.com',
