@@ -74,7 +74,7 @@ module.exports = {
       src: 'https://cdn.panelbear.com/analytics.js?site=IsD6EBUV3pJ',
       async: true,
     },
-    './config/panelbear.js',
+    '/static/panelbear.config.js',
   ],
   stylesheets: [
     'https://fonts.gstatic.com',
