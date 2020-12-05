@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import CodeBlock from '@theme/CodeBlock';
 import styles from './styles.module.css';
 
-import Support from '../../components/Support'
+import Support from '../../components/Support';
 
 const features = [
   {
