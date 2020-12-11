@@ -92,10 +92,10 @@ function Home() {
           <div className={styles.team}>
             <div className={styles.teamItem}>
               <img
-                alt="Eric Ardhiansyah"
+                alt="Eric a.k.a Athaariq Ardhiansyah"
                 src={useBaseUrl('img/team/eric.png')}
               />
-              <h3>Eric Ardhiansyah</h3>
+              <h3>Athaariq "Eric" Ardhiansyah</h3>
               <p className={styles.teamJob}>Founder • Developer</p>
               <p>
                 <a
