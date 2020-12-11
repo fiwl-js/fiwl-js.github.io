@@ -51,7 +51,7 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      copyright: `Designed by <a href='https://braydentw.github.io' target='_blank' rel='noreferrer noopener'>BraydenTW</a>, built with Docusaurus.`,
+      copyright: 'Created with ♥ by FIWL community',
     },
   },
   presets: [
