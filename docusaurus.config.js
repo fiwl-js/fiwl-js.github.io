@@ -16,7 +16,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'fiwl-js',
-  projectName: 'fiwl-js',
+  projectName: 'fiwl-js.github.io',
   themeConfig: {
     announcementBar: {
       id: 'supportus-new',
