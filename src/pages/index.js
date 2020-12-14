@@ -70,7 +70,7 @@ function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
-    <Layout title={`Home`} description="Desc">
+    <Layout title="Home" description="Desc">
       <header className={styles.heroBanner}>
         <div className="container">
           <img
