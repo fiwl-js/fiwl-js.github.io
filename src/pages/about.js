@@ -93,7 +93,9 @@ function Home() {
             <div className={styles.teamItem}>
               <img
                 alt="Eric a.k.a Athaariq Ardhiansyah"
-                src={useBaseUrl('img/team/eric.png')}
+                src={useBaseUrl(
+                  'https://avatars1.githubusercontent.com/u/30412448?s=460&u=a54e2bab174032caaf40f0a28fb753affdcab7d1&v=4',
+                )}
               />
               <h3>Athaariq "Eric" Ardhiansyah</h3>
               <p className={styles.teamJob}>Founder • Developer</p>
@@ -109,7 +111,9 @@ function Home() {
             <div className={styles.teamItem}>
               <img
                 alt="Antariksha Verma"
-                src={useBaseUrl('img/team/antariksha.png')}
+                src={useBaseUrl(
+                  'https://avatars2.githubusercontent.com/u/33229117?s=460&u=4b71b49dc448424e65a1c37bd6655cddc8185ef9&v=4',
+                )}
               />
               <h3>Antariksha Verma</h3>
               <p className={styles.teamJob}>Developer • Maintainer</p>
@@ -123,7 +127,12 @@ function Home() {
               </p>
             </div>
             <div className={styles.teamItem}>
-              <img alt="Brayden W" src={useBaseUrl('img/team/brayden.png')} />
+              <img
+                alt="Brayden W"
+                src={useBaseUrl(
+                  'https://avatars0.githubusercontent.com/u/47185402?s=460&u=a8110a698e221877bac03471b80a8d430c22af05&v=4',
+                )}
+              />
               <h3>Brayden W</h3>
               <p className={styles.teamJob}>Lead Designer • Developer</p>
               <p>
