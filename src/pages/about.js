@@ -50,6 +50,30 @@ const features = [
   },
 ];
 
+const team = [
+  {
+    name: 'Athaariq "Eric" Ardhiansyah',
+    teamJob: 'Founder • Developer',
+    avatar:
+      'https://avatars1.githubusercontent.com/u/30412448?s=460&u=a54e2bab174032caaf40f0a28fb753affdcab7d1&v=4',
+    ghProfile: 'https://github.com/Thor-x86',
+  },
+  {
+    name: 'Antariksha Verma',
+    teamJob: 'Developer • Maintainer',
+    avatar:
+      'https://avatars2.githubusercontent.com/u/33229117?s=460&u=4b71b49dc448424e65a1c37bd6655cddc8185ef9&v=4',
+    ghProfile: 'https://github.com/antriksh123',
+  },
+  {
+    name: 'Brayden W',
+    teamJob: 'Designer • Developer',
+    avatar:
+      'https://avatars0.githubusercontent.com/u/47185402?s=460&u=a8110a698e221877bac03471b80a8d430c22af05&v=4',
+    ghProfile: 'https://github.com/BraydenTW',
+  },
+];
+
 function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
@@ -90,60 +114,21 @@ function Home() {
         <div className={styles.aboutMain}>
           <h2 className={styles.teamTitle}>Meet the Team</h2>
           <div className={styles.team}>
-            <div className={styles.teamItem}>
-              <img
-                alt="Eric a.k.a Athaariq Ardhiansyah"
-                src={useBaseUrl(
-                  'https://avatars1.githubusercontent.com/u/30412448?s=460&u=a54e2bab174032caaf40f0a28fb753affdcab7d1&v=4',
-                )}
-              />
-              <h3>Athaariq "Eric" Ardhiansyah</h3>
-              <p className={styles.teamJob}>Founder • Developer</p>
-              <p>
-                <a
-                  href="https://github.com/Thor-x86"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  @Thor-x86
-                </a>
-              </p>
-            </div>
-            <div className={styles.teamItem}>
-              <img
-                alt="Antariksha Verma"
-                src={useBaseUrl(
-                  'https://avatars2.githubusercontent.com/u/33229117?s=460&u=4b71b49dc448424e65a1c37bd6655cddc8185ef9&v=4',
-                )}
-              />
-              <h3>Antariksha Verma</h3>
-              <p className={styles.teamJob}>Developer • Maintainer</p>
-              <p>
-                <a
-                  href="https://github.com/antriksh123"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  @antriksh123
-                </a>
-              </p>
-            </div>
-            <div className={styles.teamItem}>
-              <img
-                alt="Brayden W"
-                src={useBaseUrl(
-                  'https://avatars0.githubusercontent.com/u/47185402?s=460&u=a8110a698e221877bac03471b80a8d430c22af05&v=4',
-                )}
-              />
-              <h3>Brayden W</h3>
-              <p className={styles.teamJob}>Lead Designer • Developer</p>
-              <p>
-                <a
-                  href="https://github.com/BraydenTW"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  @BraydenTW
-                </a>
-              </p>
-            </div>
+            {team.map((member) => (
+              <div className={styles.teamItem} key={member.ghProfile}>
+                <img alt={member.name} src={useBaseUrl(member.avatar)} />
+                <h3>{member.name}</h3>
+                <p className={styles.teamJob}>{member.teamJob}</p>
+                <p>
+                  <a
+                    href={member.ghProfile}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    @{member.ghProfile.replace('https://github.com/', '')}
+                  </a>
+                </p>
+              </div>
+            ))}
           </div>
           <Support />
         </div>
