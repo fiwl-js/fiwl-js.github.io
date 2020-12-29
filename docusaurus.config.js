@@ -16,7 +16,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'fiwl-js',
-  projectName: 'fiwl-js',
+  projectName: 'fiwl-js.github.io',
   themeConfig: {
     announcementBar: {
       id: 'supportus-new',
@@ -51,7 +51,7 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      copyright: `Designed by <a href='https://braydentw.github.io' target='_blank' rel='noreferrer noopener'>BraydenTW</a>, built with Docusaurus.`,
+      copyright: 'Created with ♥ by FIWL community',
     },
   },
   presets: [
@@ -74,7 +74,7 @@ module.exports = {
       src: 'https://cdn.panelbear.com/analytics.js?site=IsD6EBUV3pJ',
       async: true,
     },
-    '/config/panelbear.js',
+    'https://gitcdn.link/cdn/fiwl-js/fiwl-js.github.io/ecb105a8ad3f83d10bea7940eae3ce228aaa8bdd/static/panelbear.config.js',
   ],
   stylesheets: [
     'https://fonts.gstatic.com',
