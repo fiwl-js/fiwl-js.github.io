@@ -7,7 +7,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // import clsx from 'clsx';
 import Layout from '@theme/Layout';
 // import Link from '@docusaurus/Link';
@@ -50,30 +50,6 @@ import Support from '../../components/Support';
 //   },
 // ];
 
-const team = [
-  {
-    name: 'Athaariq "Eric" Ardhiansyah',
-    teamJob: 'Founder • Developer',
-    avatar:
-      'https://avatars1.githubusercontent.com/u/30412448?s=460&u=a54e2bab174032caaf40f0a28fb753affdcab7d1&v=4',
-    ghProfile: 'https://github.com/Thor-x86',
-  },
-  {
-    name: 'Antariksha Verma',
-    teamJob: 'Developer • Maintainer',
-    avatar:
-      'https://avatars2.githubusercontent.com/u/33229117?s=460&u=4b71b49dc448424e65a1c37bd6655cddc8185ef9&v=4',
-    ghProfile: 'https://github.com/antriksh123',
-  },
-  {
-    name: 'Brayden W',
-    teamJob: 'Designer • Developer',
-    avatar:
-      'https://avatars0.githubusercontent.com/u/47185402?s=460&u=a8110a698e221877bac03471b80a8d430c22af05&v=4',
-    ghProfile: 'https://github.com/BraydenTW',
-  },
-];
-
 // function Feature({imageUrl, title, description}) {
 //   const imgUrl = useBaseUrl(imageUrl);
 //   return (
@@ -92,6 +68,29 @@ const team = [
 function Home() {
   // const context = useDocusaurusContext();
   // const {siteConfig = {}} = context;
+  const contributors = [
+    {username: 'Thor-x86', teamJob: 'Founder • Developer'},
+    {username: 'antriksh123', teamJob: 'Developer • Maintainer'},
+    {username: 'BraydenTW', teamJob: 'Designer • Developer'},
+  ];
+  const [team, setTeam] = useState([]);
+  useEffect(() => {
+    contributors.forEach(async (contributor) => {
+      const res = await fetch(
+        `https://cors-anywhere.herokuapp.com/https://api.github.com/users/${contributor.username}`,
+      );
+      const data = await res.json();
+      const teamMember = {
+        name: !data.name ? data.login : data.name,
+        username: data.login,
+        teamJob: contributor.teamJob,
+        avatar: data.avatar_url,
+        ghProfile: data.html_url,
+      };
+      setTeam((prevTeam) => [...prevTeam, teamMember]);
+    });
+  }, []);
+
   return (
     <Layout
       title="About"
@@ -115,7 +114,7 @@ function Home() {
           <h2 className={styles.teamTitle}>Meet the Team</h2>
           <div className={styles.team}>
             {team.map((member) => (
-              <div className={styles.teamItem} key={member.ghProfile}>
+              <div className={styles.teamItem} key={member.name}>
                 <img alt={member.name} src={member.avatar} />
                 <h3>{member.name}</h3>
                 <p className={styles.teamJob}>{member.teamJob}</p>
@@ -124,7 +123,7 @@ function Home() {
                     href={member.ghProfile}
                     target="_blank"
                     rel="noopener noreferrer">
-                    @{member.ghProfile.replace('https://github.com/', '')}
+                    @{member.username}
                   </a>
                 </p>
               </div>
