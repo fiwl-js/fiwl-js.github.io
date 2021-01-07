@@ -7,74 +7,97 @@
  * @format
  */
 
-import React from 'react';
-import clsx from 'clsx';
+import React, {useEffect, useState} from 'react';
+// import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+// import Link from '@docusaurus/Link';
+// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 import Support from '../../components/Support';
 
-const features = [
-  {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
+// const features = [
+//   {
+//     title: 'Easy to Use',
+//     imageUrl: 'img/undraw_docusaurus_mountain.svg',
+//     description: (
+//       <>
+//         Docusaurus was designed from the ground up to be easily installed and
+//         used to get your website up and running quickly.
+//       </>
+//     ),
+//   },
+//   {
+//     title: 'Focus on What Matters',
+//     imageUrl: 'img/undraw_docusaurus_tree.svg',
+//     description: (
+//       <>
+//         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
+//         ahead and move your docs into the <code>docs</code> directory.
+//       </>
+//     ),
+//   },
+//   {
+//     title: 'Powered by React',
+//     imageUrl: 'img/undraw_docusaurus_react.svg',
+//     description: (
+//       <>
+//         Extend or customize your website layout by reusing React. Docusaurus can
+//         be extended while reusing the same header and footer.
+//       </>
+//     ),
+//   },
+// ];
 
-function Feature({imageUrl, title, description}) {
-  const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
-}
+// function Feature({imageUrl, title, description}) {
+//   const imgUrl = useBaseUrl(imageUrl);
+//   return (
+//     <div className={clsx('col col--4', styles.feature)}>
+//       {imgUrl && (
+//         <div className="text--center">
+//           <img className={styles.featureImage} src={imgUrl} alt={title} />
+//         </div>
+//       )}
+//       <h3>{title}</h3>
+//       <p>{description}</p>
+//     </div>
+//   );
+// }
 
 function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  // const context = useDocusaurusContext();
+  // const {siteConfig = {}} = context;
+  const contributors = [
+    {username: 'Thor-x86', teamJob: 'Founder • Developer'},
+    {username: 'antriksh123', teamJob: 'Developer • Maintainer'},
+    {username: 'BraydenTW', teamJob: 'Designer • Developer'},
+  ];
+  const [team, setTeam] = useState([]);
+  useEffect(() => {
+    contributors.forEach(async (contributor) => {
+      const res = await fetch(
+        `https://cors-anywhere.herokuapp.com/https://api.github.com/users/${contributor.username}`,
+      );
+      const data = await res.json();
+      const teamMember = {
+        name: !data.name ? data.login : data.name,
+        username: data.login,
+        teamJob: contributor.teamJob,
+        avatar: data.avatar_url,
+        ghProfile: data.html_url,
+      };
+      setTeam((prevTeam) => [...prevTeam, teamMember]);
+    });
+  }, []);
+
   return (
     <Layout
-      title={`About`}
+      title="About"
       description="Description will go into a meta tag in <head />">
       <header className={styles.aboutBanner}>
         <div className="container">
-          <div className={styles.aboutLogo}></div>
+          <div className={styles.aboutLogo} />
           <br />
           <br />
           <h1 className="hero__title">About Us</h1>
@@ -90,51 +113,21 @@ function Home() {
         <div className={styles.aboutMain}>
           <h2 className={styles.teamTitle}>Meet the Team</h2>
           <div className={styles.team}>
-            <div className={styles.teamItem}>
-              <img
-                alt="Eric a.k.a Athaariq Ardhiansyah"
-                src={useBaseUrl('img/team/eric.png')}
-              />
-              <h3>Athaariq "Eric" Ardhiansyah</h3>
-              <p className={styles.teamJob}>Founder • Developer</p>
-              <p>
-                <a
-                  href="https://github.com/Thor-x86"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  @Thor-x86
-                </a>
-              </p>
-            </div>
-            <div className={styles.teamItem}>
-              <img
-                alt="Antariksha Verma"
-                src={useBaseUrl('img/team/antariksha.png')}
-              />
-              <h3>Antariksha Verma</h3>
-              <p className={styles.teamJob}>Developer • Maintainer</p>
-              <p>
-                <a
-                  href="https://github.com/antriksh123"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  @antriksh123
-                </a>
-              </p>
-            </div>
-            <div className={styles.teamItem}>
-              <img alt="Brayden W" src={useBaseUrl('img/team/brayden.png')} />
-              <h3>Brayden W</h3>
-              <p className={styles.teamJob}>Lead Designer • Developer</p>
-              <p>
-                <a
-                  href="https://github.com/BraydenTW"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  @BraydenTW
-                </a>
-              </p>
-            </div>
+            {team.map((member) => (
+              <div className={styles.teamItem} key={member.name}>
+                <img alt={member.name} src={member.avatar} />
+                <h3>{member.name}</h3>
+                <p className={styles.teamJob}>{member.teamJob}</p>
+                <p>
+                  <a
+                    href={member.ghProfile}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    @{member.username}
+                  </a>
+                </p>
+              </div>
+            ))}
           </div>
           <Support />
         </div>

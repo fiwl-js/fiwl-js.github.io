@@ -139,6 +139,7 @@ html[data-theme='dark'] .heroBanner, html[data-theme='dark'] .aboutBanner, html[
 
 html[data-theme='dark'] .getStarted:hover {
   background: #c1c8da;
+  color: #1C1D1F;
 }
 
 html[data-theme='dark'] .language-sh {
