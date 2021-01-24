@@ -9,4 +9,4 @@ Quickstart boilerplate is already provided on a github repository. To use that, 
 2. **Clone via git**<br/> For installing quickstart boilerplate, just clone via git with this command:<br/> `git clone https://github.com/Thor-x86/fiwl-quickstart`
 3. **Start your favorite IDE**<br/> Now you can choose `fiwl-quickstart` as project directory for your [IDE](https://www.codecademy.com/articles/what-is-an-ide). If you are using VSCode, enter this command:<br/> `code ./fiwl-quickstart`
 
-When the IDE shown correctly, let's start learning on the [next page](/docs/intro/how_to_use).
+When the IDE shown correctly, let's start learning on the [next page](/docs/how_to_use).

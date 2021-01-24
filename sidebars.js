@@ -9,7 +9,7 @@
 
 module.exports = {
   docs: {
-    Introduction: ['what_is_fiwl', 'how_to_install', 'how_to_use', 'copyright'],
+    Introduction: ['what_is_fiwl', 'how_to_install', 'how_to_use'],
     'Development Checklist': [
       'dev_checklist/pre_alpha',
       'dev_checklist/post_alpha',
