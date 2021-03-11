@@ -70,7 +70,7 @@ function Home() {
   // const {siteConfig = {}} = context;
   const contributors = [
     {username: 'Thor-x86', teamJob: 'Founder • Developer'},
-    {username: 'antriksh123', teamJob: 'Developer • Maintainer'},
+    {username: 'yummyweb', teamJob: 'Developer • Maintainer'},
     {username: 'BraydenTW', teamJob: 'Designer • Developer'},
   ];
   const [team, setTeam] = useState([]);
